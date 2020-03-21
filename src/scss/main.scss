@@ -1,19 +1,18 @@
 @import 'header.scss';
 
-body{
-  width: 1290px;
+body {
+  width: 100%;
   margin: 0 auto;
   font-family: 'PTSans';
 }
 
-.owl-carousel {
-  .carousel__item {
-    width: 307px;
-    height: 521px;
-    border: 1px solid black;
-    box-sizing: border-box;
-    img {
-      width: 100%;
-    }
+.container {
+  width: 1300px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+  .container {
+    width: 100%;
   }
 }

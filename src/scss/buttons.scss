@@ -1,0 +1,35 @@
+.menu-btn {
+    position: absolute;
+    top: 0px;
+    left: 210px;
+    width: 60px;
+    height: 60px;
+    background-color: $black;
+    border: none;
+    outline: none;
+    &::before{
+      display: block;
+      content: '';
+      position: relative;
+      width: 4px;
+      height: 40px;
+      top: -5px;
+      left: 20px;
+      transform: rotate(90deg);
+      background-color: $gold;
+      box-shadow: 12px 0px 0px $gold;
+      transition: transform ease-in-out .4s;
+    }
+    &::after{
+      display: block;
+      content: '';
+      position: relative;
+      width: 4px;
+      height: 40px;
+      bottom: 20px;
+      left: 20px;
+      transform: rotate(90deg);
+      background-color: $gold;
+      transition: transform ease-in-out .4s;
+    }
+  }
