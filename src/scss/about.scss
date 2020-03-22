@@ -1,0 +1,48 @@
+.main__about {
+  margin-top: 50px;
+  h2{
+    border-top: 2px solid $black;
+    border-bottom: 2px solid $black;
+    text-align: center;
+    color: $black;
+    padding: 10px;
+  }
+  
+}
+
+@media screen and (min-width: 320px) {
+  .main__about {
+    h2{
+      font-size: 1.1rem;
+    }
+    p{
+      padding-left: 10px;
+      font-size: .9rem;
+      margin: 0 auto;
+      width: 90vw;
+    }
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .main__about {
+    h2{
+      font-size: 1.2rem;
+    }
+    p{
+      font-size: 1rem;
+      width: 85vw;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main__about {
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}

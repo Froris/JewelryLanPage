@@ -1,0 +1,40 @@
+.features {
+  padding: 0 10px;
+  h2 {
+    margin: 0;
+    padding: 5px 0;
+    border-bottom: 2px solid $gold;
+  }
+  .features__item span {
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 320px){
+  .features h2 {
+    width: 80%;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+}
+
+
+@media screen and (min-width: 760px){
+  .features {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .features h2 {
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+  }
+  .features .features__item {
+    span {
+      font-size: 1.3rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}

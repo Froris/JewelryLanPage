@@ -1,9 +1,19 @@
+$gold: rgb(255, 238, 144);
+$black: #1f1f1f;
+
 @import 'header.scss';
+@import 'about.scss';
+@import 'contacts.scss';
+@import 'products.scss';
+@import 'form.scss';
+@import 'features.scss';
 
 body {
   width: 100%;
   margin: 0 auto;
-  font-family: 'PTSans';
+  font-family: 'RobotoReg', 'RobotoBold', 'RobotoMed';
+  background-color: white;
+  overflow-x: hidden;
 }
 
 .container {

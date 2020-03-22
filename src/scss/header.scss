@@ -1,28 +1,30 @@
-$gold: rgb(248, 225, 92);
-$black: rgb(39, 39, 39);
-
-.main-header {
+.header {
   display: flex;
   flex-direction: column;
 }
 
-.header--wrapper{
+.header__inner-container{
   position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid $gold;
-  box-shadow: 1px 0px 6px $black;
 }
 
 .main__title {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   padding: 15px 0 15px 15px;
   h1 {
     margin: 0;
     margin-bottom: 20px;
     padding: 0;
     text-align: center;
+    font-weight:700;
+  }
+  .main__logo {
+    position: absolute;
   }
 }
 
@@ -31,9 +33,9 @@ $black: rgb(39, 39, 39);
 .menu-btn {
   position: absolute;
   top: 0px;
-  left: 200px;
-  width: 60px;
-  height: 60px;
+  left: 250px;
+  width: 55px;
+  height: 55px;
   background-color: $black;
   border: none;
   outline: none;
@@ -65,11 +67,11 @@ $black: rgb(39, 39, 39);
 }
 
 // MENU - WRAPPER ACTIVE ===
-.main__menu--wrapper.active {
+.header__menu-wrapper.wrapper--active {
   left: -1px;
   .menu-btn {
     top: 0;
-    left: 200px;
+    left: 249px;
     &::before{
       top: 8px;
       left: 22px;
@@ -86,7 +88,7 @@ $black: rgb(39, 39, 39);
 }
 
 // MENU ===
-.main__menu {
+.header__menu {
   display: flex;
   margin: 0;
   padding: 0;
@@ -98,53 +100,66 @@ $black: rgb(39, 39, 39);
 }
 
 @media screen and (min-width: 320px) {
-  .header--wrapper{
+  .header__inner-container{
     flex-direction: row-reverse;
     position: relative;
   }
 
   .main__title {
+    width: 250px;
     margin: 0;
     padding-right: 15px;
     text-align: right;
     h1 {
-      font-size: 1.3rem;
+      text-align: right;
+      font-size: 1.2rem;
+    }
+    .main__logo {
+      display: none;
     }
     span {
       display: flex;
       flex-direction: column;
       margin-top: 5px;
+      color: $black;
     }
   }
   
-  .main__menu--wrapper {
+  .header__menu-wrapper {
     position: absolute;
-    left: -201px;
+    left: -251px;
     top: 0;
-    width: 200px;
+    width: 250px;
     background-color: $black;
     transition: all ease-in-out .4s;
   }
 
-  .main__menu {
+  .header__menu {
     flex-direction: column;
   }
 
-  .main__menu li {
+  .header__menu li {
+    position: relative;
     border-left: none;
-    font-size: 1.2rem;
     border-bottom: 2px solid $gold;
+    .icon {
+      position: absolute;
+      top: 12%;
+      left: 75%;
+      width: 40px;
+    }
   }
 
-  .main__menu li a {
+  .header__menu li a {
     display: block;
-    padding: 10px 15px;
+    padding: 15px 15px;
+    font-size: 1.2rem;
     font-weight: bold;
     text-decoration: none;
-    color: rgb(238, 238, 238);
+    color: rgb(235, 235, 235);
   }
 
-  .main__menu li:hover {
+  .header__menu li:hover {
     background: $gold;
     transition: ease .4s;
     a {
@@ -155,8 +170,16 @@ $black: rgb(39, 39, 39);
 
 @media screen and (min-width: 425px) {
   .main__title {
+    position: relative;
+    width: 300px;
     h1 {
       font-size: 1.7rem;
+    }
+    .main__logo {
+      width: 35px;
+      display: block;
+      top: 10px;
+      left: 37%;
     }
     span {
       font-size: 1.3rem;
@@ -165,30 +188,24 @@ $black: rgb(39, 39, 39);
 }
 
 @media screen and (min-width: 768px) {
-  .main__title {
-    background-color: $black;
-    color: white;
-    span {
-      color: $gold;
-    }
-  }
-
-  .main__menu--wrapper {
+  .header__menu-wrapper {
     left: -301px;
     width: 300px;
     background-color: $black;
   }
 
-  .main__menu li {
+  .header__menu li {
     border-left: none;
-    font-size: 1.4rem;
+    a {
+      font-size: 1.4rem;
+    }
   }
 
   .menu-btn {
     left: 300px;
   }
 
-  .main__menu--wrapper.active {
+  .header__menu-wrapper.wrapper--active {
     .menu-btn {
       left: 300px;
     }
@@ -196,16 +213,22 @@ $black: rgb(39, 39, 39);
 }
 
 @media screen and (min-width: 1024px) {
-  .header--wrapper{
+  .header__inner-container{
     flex-direction: row;
     justify-content: space-between;
+    background-image: none;
   }
 
   .main__title {
     text-align: left;
     h1 {
       text-align: left;
-      font-size: 2rem;
+      font-size: 1.6rem;
+    }
+    .main__logo {
+      width: 40px;
+      top: 10px;
+      left: 95%;
     }
     span {
       display: flex;
@@ -214,7 +237,7 @@ $black: rgb(39, 39, 39);
     }
   }
   
-  .main__menu--wrapper {
+  .header__menu-wrapper {
     position: relative;
     top: 0;
     left: 0;
@@ -223,17 +246,31 @@ $black: rgb(39, 39, 39);
     .menu-btn {
       display: none;
     }
+    .icon {
+      display: none;
+    }
   }
 
-  .main__menu {
+  .header__menu {
     flex-direction: row;
     li {
       border-bottom: none;
       border-left: 2px solid rgb(163, 163, 163);
       a {
-        font-weight: normal;
+        font-size: 1.2rem;
         color: $black;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main__title {
+    .main__logo {
+      width: 70px;
+      height: auto;
+      top: 25%;
+      left: 170%;
     }
   }
 }
