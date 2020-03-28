@@ -1,12 +1,15 @@
 .features {
-  padding: 0 10px;
+  padding: 25px 20px;
+  box-sizing: border-box;
+  background-color: rgb(255, 246, 196);
   h2 {
-    margin: 0;
-    padding: 5px 0;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    width: 80%;
     border-bottom: 2px solid $gold;
   }
   .features__item span {
-    font-weight: bold;
+    font-family: 'NunitoSemiBold';
   }
 }
 
@@ -21,12 +24,12 @@
 
 @media screen and (min-width: 760px){
   .features {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
   }
   .features h2 {
     text-align: center;
-    width: 100%;
+    width: 80%;
     font-size: 2rem;
   }
   .features .features__item {
@@ -35,6 +38,43 @@
     }
     p {
       font-size: 1.2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .features {
+    width: 100%;
+    margin: 0;
+    .features-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+  }
+
+  .features h2 {
+    text-align: center;
+    width: 80%;
+    font-size: 2rem;
+  }
+
+  .features .features__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30%;
+    span {
+      font-size: 1.3rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    .item__image {
+      width: 150px;
+      margin: 20px 0;
     }
   }
 }

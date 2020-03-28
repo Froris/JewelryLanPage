@@ -21,7 +21,7 @@
     margin-bottom: 20px;
     padding: 0;
     text-align: center;
-    font-weight:700;
+    font-family: 'NunitoBold';
   }
   .main__logo {
     position: absolute;
@@ -29,7 +29,7 @@
 }
 
 
-// MENU BTN
+// MENU BUTTON
 .menu-btn {
   position: absolute;
   top: 0px;
@@ -43,21 +43,21 @@
     display: block;
     content: '';
     position: relative;
-    width: 4px;
-    height: 40px;
+    height: 33px;
+    width: 2px;
     top: -5px;
     left: 20px;
     transform: rotate(90deg);
     background-color: $gold;
-    box-shadow: 12px 0px 0px $gold;
+    box-shadow: 9px 0px 0px $gold;
     transition: transform ease-in-out .4s;
   }
   &::after{
     display: block;
     content: '';
     position: relative;
-    width: 4px;
-    height: 40px;
+    height: 33px;
+    width: 2px;
     bottom: 20px;
     left: 20px;
     transform: rotate(90deg);
@@ -66,28 +66,28 @@
   }
 }
 
-// MENU - WRAPPER ACTIVE ===
+// MENU - WRAPPER ACTIVE 
 .header__menu-wrapper.wrapper--active {
   left: -1px;
   .menu-btn {
     top: 0;
     left: 249px;
     &::before{
-      top: 8px;
+      top: 10px;
       left: 22px;
       transform: rotate(45deg);
       box-shadow: none;
     }
     &::after{
-      bottom: 32px;
-      left: 24px;
+      bottom: 23px;
+      left: 23px;
       transform: rotate(-45deg);
       background-color: $gold;
     }
   }
 }
 
-// MENU ===
+// MENU 
 .header__menu {
   display: flex;
   margin: 0;
@@ -103,6 +103,7 @@
   .header__inner-container{
     flex-direction: row-reverse;
     position: relative;
+    background-color: $black;
   }
 
   .main__title {
@@ -111,6 +112,7 @@
     padding-right: 15px;
     text-align: right;
     h1 {
+      color: $gold;
       text-align: right;
       font-size: 1.2rem;
     }
@@ -121,12 +123,14 @@
       display: flex;
       flex-direction: column;
       margin-top: 5px;
-      color: $black;
+      color: white;
+      font-family: 'NunitoLight';
     }
   }
   
   .header__menu-wrapper {
     position: absolute;
+    z-index: 100;
     left: -251px;
     top: 0;
     width: 250px;
@@ -141,7 +145,7 @@
   .header__menu li {
     position: relative;
     border-left: none;
-    border-bottom: 2px solid $gold;
+    border-bottom: 1px solid $gold;
     .icon {
       position: absolute;
       top: 12%;
@@ -152,11 +156,11 @@
 
   .header__menu li a {
     display: block;
-    padding: 15px 15px;
+    padding: 10px;
+    font-family: 'NunitoBold';
     font-size: 1.2rem;
-    font-weight: bold;
     text-decoration: none;
-    color: rgb(235, 235, 235);
+    color: rgb(207, 207, 207);
   }
 
   .header__menu li:hover {
@@ -166,13 +170,32 @@
       color: $black;
     }
   }
+
+  .media__inner-container {
+    position: absolute;
+    width: 100%;
+    top: 60%;
+    right: 67%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    a {
+      margin-right: 15px;
+      display: block;
+      img {
+        width: 35px;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 425px) {
   .main__title {
     position: relative;
     width: 300px;
+    padding-bottom: 60px;
     h1 {
+      color: white;
       font-size: 1.7rem;
     }
     .main__logo {
@@ -182,8 +205,14 @@
       left: 37%;
     }
     span {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
+      color: rgb(255, 246, 196);
     }
+  }
+
+  .media__inner-container {
+    top: 75%;
+    left: 0%;
   }
 }
 
@@ -214,27 +243,46 @@
 
 @media screen and (min-width: 1024px) {
   .header__inner-container{
-    flex-direction: row;
-    justify-content: space-between;
-    background-image: none;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .main__title {
+    width: 100%;
+    padding-bottom: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
     text-align: left;
     h1 {
+      padding-top: 15px;
+      padding-left: 70px;
       text-align: left;
       font-size: 1.6rem;
     }
     .main__logo {
       width: 40px;
-      top: 10px;
-      left: 95%;
+      top: 25%;
+      left: 3%;
     }
     span {
+      font-size: 1.1rem;
       display: flex;
       flex-direction: column;
       margin-top: 5px;
     }
+  }
+
+  .header__media {
+    position: relative;
+  }
+
+  .media__inner-container {
+    top: 135%;
+    right: 0%;
+    a img {
+        width: 40px;
+      }
   }
   
   .header__menu-wrapper {
@@ -242,7 +290,8 @@
     top: 0;
     left: 0;
     width: auto;
-    background-color: transparent;
+    padding-left: 30px;
+    margin-bottom: 20px;
     .menu-btn {
       display: none;
     }
@@ -254,11 +303,14 @@
   .header__menu {
     flex-direction: row;
     li {
-      border-bottom: none;
-      border-left: 2px solid rgb(163, 163, 163);
+      border: none;
+      &:not(:last-child) {
+        border-right: 1px solid $gold-lite;
+      }
       a {
+        font-family: 'NunitoLight';
         font-size: 1.2rem;
-        color: $black;
+        color: $gold-lite;
       }
     }
   }
@@ -267,10 +319,10 @@
 @media screen and (min-width: 1200px) {
   .main__title {
     .main__logo {
-      width: 70px;
+      width: 60px;
       height: auto;
-      top: 25%;
-      left: 170%;
+      top: 20%;
+      left: 1%;
     }
   }
 }

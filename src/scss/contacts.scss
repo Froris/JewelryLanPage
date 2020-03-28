@@ -1,14 +1,14 @@
 .main__contacts {
-  margin-top: 50px;
-  padding-top: 10px;
+  margin-top: 0;
   padding-bottom: 20px;
   color: white;
   background-color: $black;
   h2{
+    margin: 25px auto;
+    padding-bottom: 15px;
+    width: 80%;
     text-align: center;
     color: $gold;
-    padding: 10px;
-    border-top: 2px solid $gold;
     border-bottom: 2px solid $gold;
   }    
 }
