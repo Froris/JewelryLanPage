@@ -29,25 +29,26 @@
 }
 
 @media screen and (min-width: 425px) {
-  .main__about {
-    h2{
-      font-size: 1.2rem;
-    }
-    p{
-      font-size: 1rem;
-      width: 85%;
-    }
+  .main__about p {
+    font-size: 1rem;
+    width: 85%;
   }
 }
 
 @media screen and (min-width: 768px) {
   .main__about {
+    .about-wrapper {
+      margin: 0 auto;
+      margin-bottom: 20px;
+      width: 90%;
+    }
     h2 {
       padding: 20px;
       padding-top: 30px;
-      font-size: 1.5rem;
+      font-size: 1.7rem;
     }
     p {
+      text-align: left;
       font-size: 1.2rem;
     }
   }

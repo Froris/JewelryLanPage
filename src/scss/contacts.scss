@@ -8,7 +8,7 @@
     padding-bottom: 15px;
     width: 80%;
     text-align: center;
-    color: $gold;
+    color: $gold-lite;
     border-bottom: 2px solid $gold;
   }    
 }
@@ -18,12 +18,13 @@
     h2{
       font-size: 1.1rem;
     }
-    span, p {
+    span,
+    p {
+      margin: 0 auto;
       padding-left: 10px;
       display: block;
-      font-size: .9rem;
-      margin: 0 auto;
       width: 90vw;
+      font-size: .9rem;
     }
     .contacts__list {
       width: 80vw;
@@ -37,10 +38,12 @@
     }
 
     .contacts__inform-wrapper {
+      margin-top: 30px;
       span {
-        display: block;
-        margin: 5px 10px;
-        padding-bottom: 2px;
+        width: 70%;
+        margin: 20px 10px 10px 0;
+        padding: 5px 10px;
+        color: $gold-lite;
         border-bottom: 2px solid $gold;
       }
     }
@@ -61,32 +64,66 @@
   
 @media screen and (min-width: 768px) {
   .main__contacts {
-
     h2 {
       font-size: 1.5rem;
     }
     span {
       font-size: 1.2rem;
     }
+
     .contacts__list {
+      position: relative;
       margin: 20px auto 50px;
       width: 90%;
       font-size: 1.2rem;
+      list-style: none;
+      li::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0%;
+        width: 30px;
+        height: 30px;
+      }
+      .list__item-form::before {
+        top: -5%;
+        background-image: url('../icons/list-icons/list-form.svg');
+      }
+      .list__item-instagram::before {
+        top: 18%;
+        background-image: url('../icons/list-icons/list-instagram.svg');
+      }
+      .list__item-facebook::before {
+        top: 40%;
+        background-image: url('../icons/list-icons/list-facebook.svg');
+      }
+      .list__item-email::before {
+        top: 63%;
+        background-image: url('../icons/list-icons/list-mail.svg');
+      }
+      .list__item-phone::before {
+        top: 82%;
+        background-image: url('../icons/list-icons/list-phone.svg');
+      }
     }
 
     .contacts__inform-wrapper {
       span {
         width: 30%;
         display: block;
-        margin: 10px 10px 10px 0;
-        padding: 5px 10px;
-        color: white;
         background-color: $black;
-        border-bottom: 2px solid $gold;
       }
       p {
         font-size: 1.1rem;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main__contacts {
+    h2 {
+      font-size: 1.7rem;
     }
   }
 }

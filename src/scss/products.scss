@@ -27,6 +27,7 @@
     h2 {
       font-size: 1.2rem;
       padding: 10px;
+      padding-bottom: 20px;
       margin: 10px 0 0 0;
       text-align: center;
     }
@@ -70,5 +71,11 @@
         height: 170px;
       }
     }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main__products h2 {
+    font-size: 1.7rem;  
   }
 }
